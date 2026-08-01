@@ -108,3 +108,52 @@ function updateTotal(){
     totalSpan.innerText="￥"+total;
 
 }
+function submitOrder(){
+
+    let list=[];
+
+    MENU.forEach(g=>{
+
+        g.items.forEach(f=>{
+
+            if(cart[f.id]>0){
+
+                list.push({
+                    name:f.name,
+                    count:cart[f.id],
+                    price:f.price
+                });
+
+            }
+
+        });
+
+    });
+
+    if(list.length===0){
+
+        alert("请先点菜");
+
+        return;
+
+    }
+
+    const order={
+
+        table:localStorage.getItem("username") || "家庭成员",
+
+        items:list,
+
+        total:list.reduce((s,i)=>s+i.count*i.price,0),
+
+        status:"待制作",
+
+        time:new Date().toLocaleString()
+
+    };
+
+    console.log(order);
+
+    alert("下单成功！");
+
+}
