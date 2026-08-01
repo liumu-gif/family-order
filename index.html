@@ -1,1 +1,81 @@
-a
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>家庭点餐</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="config.js"></script>
+
+<script defer src="app.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🏠 家庭点餐</h1>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>点餐人</h2>
+
+<select id="username">
+
+<option value="">请选择</option>
+
+</select>
+
+</div>
+
+<div id="menu"></div>
+
+<div class="card">
+
+<h2>备注</h2>
+
+<textarea
+id="remark"
+placeholder="例如：不要辣、少盐..."
+></textarea>
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+<div class="total">
+
+总价：
+
+<span id="total">
+
+￥0
+
+</span>
+
+</div>
+
+<button
+class="submit"
+onclick="submitOrder()">
+
+提交订单
+
+</button>
+
+</div>
+
+</body>
+
+</html>
